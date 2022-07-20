@@ -1,16 +1,44 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer base {
+  .box {
+    @apply h-full max-h-[350px] w-full max-w-[300px] bg-white shadow-xl rounded-md py-4 px-3 mx-3 flex flex-col items-center;
+  }
+  .container {
+    @apply px-3 py-2 w-full;
+  }
+  .logo {
+    @apply relative h-[50px] w-[120px];
+  }
+  .box input {
+    @apply border-2 focus:border-celetel focus:outline-none rounded px-2 py-1;
+  }
+  .btn {
+    @apply bg-celetel py-[6px] rounded text-white hover:bg-blue-600 duration-500;
+  }
+  #sidebar ul > li {
+    @apply hover:bg-blue-200 transition-colors ease-in duration-500 hover:cursor-pointer;
+  }
+  #sidebar .options {
+    @apply px-4 py-1;
+  }
+  #sidebar .options ul > li {
+    @apply hover:bg-blue-200 transition-colors ease-in duration-500 hover:cursor-pointer;
+  }
 
-* {
-  box-sizing: border-box;
+  #sidebar .active {
+    @apply bg-celetel hover:bg-celetel text-black;
+  }
+  #table table thead tr th {
+    @apply py-1 px-2;
+  }
+  #table table tbody tr td {
+    @apply py-1 px-2;
+  }
+
+  #table table tbody tr {
+    @apply bg-gray-300 border-b-[1px] border-b-gray-200;
+  }
 }
